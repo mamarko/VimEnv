@@ -30,7 +30,8 @@ Bundle 'zef/vim-cycle'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'terryma/vim-expand-region'
 Bundle 'hari-rangarajan/CCTree'
-Bundle 'vim-scripts/OmniCppComplete'
+"Bundle 'vim-scripts/OmniCppComplete'
+Bundle 'Valloric/YouCompleteMe'
 
 " ----- man pages, tmux -----------------------------------------------
 Bundle 'jez/vim-superman'
@@ -49,7 +50,7 @@ Bundle 'tpope/vim-surround'
 " Align CSV files at commas, align Markdown tables, and more
 Bundle 'godlygeek/tabular'
 " Automaticall insert the closing HTML tag
-Bundle 'HTML-AutoCloseTag'
+Bundle 'vim-scripts/HTML-AutoCloseTag'
 " Make tmux look like vim-airline (read README for extra instructions)
 Bundle 'edkolev/tmuxline.vim'
 " All the other syntax plugins I use
@@ -263,30 +264,30 @@ inoremap <leader>n <ESC>	:NERDTreeToggle<CR>i
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$']
 
 " ----- Omni complete setting -----
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "context"
 
-autocmd FileType python	    set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html	    set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType xml	    set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType css	    set omnifunc=csscomplete#CompleteCSS
-autocmd FileType cpp	    set omnifunc=omni#cpp#complete#Main
-autocmd FileType c	    set omnifunc=omni#cpp#complete#Main
-autocmd FileType scp	    set omnifunc=omni#cpp#complete#Main
+"autocmd FileType python	    set omnifunc=pythoncomplete#Complete
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html	    set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType xml	    set omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType css	    set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType cpp	    set omnifunc=omni#cpp#complete#Main
+"autocmd FileType c	    set omnifunc=omni#cpp#complete#Main
+"autocmd FileType scp	    set omnifunc=omni#cpp#complete#Main
 
-set omnifunc=syntaxcomplete#Complete
-let OmniCpp_NamespaceSearch     = 2
-let OmniCpp_GlobalScopeSearch   = 1
-let OmniCpp_DisplayMode         = 1
-let OmniCpp_ShowScopeInAbbr     = 0
-let OmniCpp_ShowPrototypeInAbbr = 0
-let OmniCpp_ShowAccess          = 1
-let OmniCpp_SelectFirstItem     = 2
-let OmniCpp_MayCompleteDot      = 1
-let OmniCpp_MayCompleteArrow    = 1
-let OmniCpp_MayCompleteScope    = 1
+"set omnifunc=syntaxcomplete#Complete
+"let OmniCpp_NamespaceSearch     = 2
+"let OmniCpp_GlobalScopeSearch   = 1
+"let OmniCpp_DisplayMode         = 1
+"let OmniCpp_ShowScopeInAbbr     = 0
+"let OmniCpp_ShowPrototypeInAbbr = 0
+"let OmniCpp_ShowAccess          = 1
+"let OmniCpp_SelectFirstItem     = 2
+"let OmniCpp_MayCompleteDot      = 1
+"let OmniCpp_MayCompleteArrow    = 1
+"let OmniCpp_MayCompleteScope    = 1
 
-set completeopt=menuone,menu,longest "preview
+"set completeopt=menuone,menu,longest "preview
 
 " ----- VIM-airline settings -----
 let g:airline#extensions#tabline#enabled	= 1
@@ -351,35 +352,35 @@ let g:gundo_preview_height                                      = 40
 let g:gundo_right                                               = 1
 
 " ----- YouCompleteMe --------------
-"let g:ycm_filetype_blacklist = {
-"	\ 'tagbar' : 1,
-"	\ 'qf' : 1,
-"	\ 'notes' : 1,
-"	\ 'markdown' : 1,
-"	\ 'unite' : 1,
-"	\ 'text' : 1,
-"	\ 'vimwiki' : 1,
-"	\ 'pandoc' : 1,
-"	\ 'infolog' : 1,
-"	\ 'mail' : 1
-"	\}
-"
-"let g:ycm_semantic_triggers =  {
-"	\   'c' : ['->', '.'],
-"	\   'objc' : ['->', '.'],
-"	\   'ocaml' : ['.', '#'],
-"	\   'cpp,objcpp' : ['->', '.', '::'],
-"	\   'perl' : ['->'],
-"	\   'php' : ['->', '::'],
-"	\   'cs,java,javascript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-"	\   'vim' : ['re![_a-zA-Z]+[_\w]*\.'],
-"	\   'ruby' : ['.', '::'],
-"	\   'lua' : ['.', ':'],
-"	\   'erlang' : [':'],
-"	\ }
-"let g:ycm_filepath_completion_use_working_dir = 1
-"let g:ycm_collect_identifiers_from_tags_files = 1
-"let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_filetype_blacklist = {
+	\ 'tagbar' : 1,
+	\ 'qf' : 1,
+	\ 'notes' : 1,
+	\ 'markdown' : 1,
+	\ 'unite' : 1,
+	\ 'text' : 1,
+	\ 'vimwiki' : 1,
+	\ 'pandoc' : 1,
+	\ 'infolog' : 1,
+	\ 'mail' : 1
+	\}
+
+let g:ycm_semantic_triggers =  {
+	\   'c' : ['->', '.'],
+	\   'objc' : ['->', '.'],
+	\   'ocaml' : ['.', '#'],
+	\   'cpp,objcpp' : ['->', '.', '::'],
+	\   'perl' : ['->'],
+	\   'php' : ['->', '::'],
+	\   'cs,java,javascript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+	\   'vim' : ['re![_a-zA-Z]+[_\w]*\.'],
+	\   'ruby' : ['.', '::'],
+	\   'lua' : ['.', ':'],
+	\   'erlang' : [':'],
+	\ }
+let g:ycm_filepath_completion_use_working_dir = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " ------------------------------ Bindings ------------------------------------
 
